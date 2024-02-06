@@ -17,7 +17,10 @@ public class App {
         public static double askManyFibonacciNumbers() {
             if (console != null) {
                 String userInput;
-                userInput = console.readLine("Quantos números da sequencia de Fibonacci em ordem crescente você quer?");
+                console.writer().print("\033[H\033[2J");
+                console.flush();
+                userInput = console
+                        .readLine("Quantos números da sequencia de Fibonacci em ordem crescente você quer? ");
                 try {
                     double number = Double.parseDouble(userInput);
 
@@ -58,17 +61,28 @@ public class App {
         private FibonacciNumbers() {
         }
 
-        public static void ascOrder(double number) {
-            int integerNumber = (int) number;
-            int lastNumber = 0;
-            List<Int> fibonacci = new ArrayList<>();
+        public static List<Integer> ascOrder(double number) {
+            int howManyNumbers = (int) number;
+            int lastNumber = 1;
+            int penultimateNumber = 0;
+            List<Integer> fibonacci = new ArrayList<>();
 
-            for (int i = 0; i < integerNumber; i++) {
-                if(i==0){
-                    fibonacci.add(0);
+            for (int i = 0; i < howManyNumbers; i++) {
+                if (i == 0) {
+                    fibonacci.add(penultimateNumber);
+                } else if (i == 1) {
+                    fibonacci.add(lastNumber);
+                } else {
+                    int newLastNumber = penultimateNumber + lastNumber;
+                    penultimateNumber = lastNumber;
+                    lastNumber = newLastNumber;
+                    fibonacci.add(newLastNumber);
                 }
-                lastNumber=lastNumber
             }
+
+            logger.info("Sequencia de Fibonacci" + " de tamanho " + howManyNumbers + ": " + fibonacci);
+
+            return fibonacci;
         }
     }
 
