@@ -1,5 +1,7 @@
 //Crie uma pirâmide de números, onde você deve imprimir em cada linha separada a quantidade de números que está sendo iterado no momento. 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 import java.io.Console;
 
@@ -77,24 +79,16 @@ public class App {
 
         public static void buildPyramid(double number) {
             int pyramidSize = (int) number;
+            StringBuilder pyramid = new StringBuilder();
 
-            logger.info("Sua piramide de número de tamanho: " + pyramidSize);
-
-            for (int i = 0; i < pyramidSize; i++) {
-                int printedNumber = i + 1;
-                if (i == 0) {
-                    System.out.println(printedNumber);
-                } else {
-                    System.out.print(printedNumber);
+            for (int i = 1; i <= pyramidSize; i++) {
+                for (int j = 1; j <= i; j++) {
+                    pyramid.append(i).append(" ");
                 }
-                for (int j = 0; j < i; j++) {
-                    if (j == (i - 1)) {
-                        System.out.println(printedNumber);
-                    } else {
-                        System.out.print(printedNumber);
-                    }
-                }
+                pyramid.append("\n");
             }
+
+            logger.info("Sua piramide de número de tamanho: " + pyramidSize + "\n" + pyramid);
         }
     }
 
