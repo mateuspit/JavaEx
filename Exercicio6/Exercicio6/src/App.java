@@ -2,6 +2,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
@@ -41,13 +42,23 @@ public class App {
     }
 
     public static void isHoliday(LocalDate date) {
-        String dataString = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-        int indexNaListaDeFeriados = Arrays.asList(holidaysList).indexOf(dataString);
+        List<String> holidayList = Arrays.asList(holidaysList);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String stringDate = date.format(formatter);
+        int indexInHolidayList = -1;
 
-        if (indexNaListaDeFeriados == -1) {
-            System.out.println("O dia " + dataString + " não é feriado 🥲");
+        if (!stringDate.contains("2024")) {
+            String dateWithoutYear = stringDate.substring(0, 5);
+            String dateWith2024 = dateWithoutYear + "-2024";
+            indexInHolidayList = holidayList.indexOf(dateWith2024);
         } else {
-            System.out.println("O dia " + dataString + " é " + holidaysList[indexNaListaDeFeriados + 1] + "! 🎉");
+            indexInHolidayList = holidayList.indexOf(stringDate);
+        }
+
+        if (indexInHolidayList == -1) {
+            System.out.println("O dia " + date + " não é feriado 🥲");
+        } else {
+            System.out.println("O dia " + date + " é " + holidaysList[indexInHolidayList + 1] + "! 🎉");
         }
     }
 
