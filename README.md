@@ -1,6 +1,6 @@
 ## ☑️ Exercícios
 
-- **O que é esse número?**
+- **O que é esse número?(Exercicio1)**
     
     Faça um algoritmo para receber um número qualquer e imprimir na tela se o número é par ou ímpar, positivo ou negativo.
     
@@ -10,7 +10,7 @@
     10 é par e positivo.
     ```
     
-- **Fibonacci**
+- **Fibonacci(Exercicio2)**
     
     Dado um número inteiro `x`, imprima uma sequência de Fibonacci de tamanho `x`.
     
@@ -25,7 +25,7 @@
     0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181
     ```
     
-- **MultiplicaAí**
+- **MultiplicaAí(Exercicio3)**
     
     Escreva um código que deve imprimir a tabela de multiplicação de algum número fornecido além de exibir um cabeçalho com o nome `Tabela de multiplicação de X`, onde X é o número a ser multiplicado.
     
@@ -44,7 +44,7 @@
     5 x 10 = 50
     ```
     
-- **Pirâmide de números**
+- **Pirâmide de números(Exercicio4)**
     
     Crie uma pirâmide de números, onde você deve imprimir em cada linha separada a quantidade de números que está sendo iterado no momento. 
     
@@ -58,7 +58,7 @@
     55555
     ```
     
-- **Duplicados não!**
+- **Duplicados não!(Exercicio5)**
     
     Escreva um código que encontre os elementos em comum que existem em dois arrays e imprima no console quais são esses elementos, um a um.
     
@@ -73,7 +73,7 @@
     Caqui
     ```
     
-- **Holidayzer**
+- **Holidayzer(Exercicio6)**
     
     Vamos criar uma aplicação Java que será um calendário de feriados! Para isso, queremos:
     
@@ -101,3 +101,9 @@
         "20-11-2024" => "Dia Nacional de Zumbi e da Consciência Negra"
         "25-12-2024" => "Natal"
         ```
+- **APItização dos Feriados (APIEx)**
+    
+    Transforme o exercício anterior em uma API! As rotas à seguir são correspondentes às funções descritas:
+    
+    - **GET** `/holidays`
+    - **GET** `/holidays/:date` (data no formato `30-05-2024`)
